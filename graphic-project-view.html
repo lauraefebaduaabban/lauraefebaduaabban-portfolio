@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Graphic Design Project | Laura Efe Badua Abban</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="project-brand">Laura Efe Badua Abban</div>
+
+  <header class="projects-header">
+    <h1>Graphic Design Project</h1>
+    <p>Selected graphic design work presented in full view.</p>
+  </header>
+
+  <main>
+
+    <section class="graphic-project-view">
+
+      <a href="graphic-design.html" class="back-to-projects">
+        ← Back to Graphic Design Projects
+      </a>
+
+      <div class="graphic-project-view-card">
+
+        <p class="project-number" id="project-number">01</p>
+
+        <h2 id="project-title">Cryptocurrency Exchange Flyer</h2>
+
+        <div class="graphic-project-full-image">
+          <img
+            id="project-image"
+            src="Crypto Exchange Promotional Flyer.jpg"
+            alt="Cryptocurrency Exchange Flyer"
+          >
+        </div>
+
+        <p id="project-description">
+          A professionally developed flyer concept for a cryptocurrency exchange,
+          designed with emphasis on clear communication, structured information,
+          visual hierarchy, and a consistent overall presentation.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="project-footer">
+    <p>© 2026 Laura Efe Badua Abban. All rights reserved.</p>
+  </footer>
+
+<script>
+  const projects = {
+    crypto: {
+      number: "01",
+      title: "Cryptocurrency Exchange Flyer",
+      image: "Crypto Exchange Promotional Flyer.jpg",
+      alt: "Cryptocurrency Exchange Promotional Flyer",
+      description:
+        "A professionally developed flyer concept for a cryptocurrency exchange, designed with emphasis on clear communication, structured information, visual hierarchy, and a consistent overall presentation."
+    },
+
+    hair: {
+      number: "02",
+      title: "Hair Braiding Services Flyer",
+      image: "Hair Braiding Services Promotional Flyer.jpg",
+      alt: "Hair Braiding Services Promotional Flyer",
+      description:
+        "A professionally developed flyer design incorporating service information, imagery, structured layout, and visual elements to create a clear and polished presentation."
+    },
+
+    food: {
+      number: "03",
+      title: "Food Flyer",
+      image: "Food Promotional Flyer.jpg",
+      alt: "Food Promotional Flyer",
+      description:
+        "A food-focused design created to present the featured offering through strong visual composition, appropriate imagery, and concise supporting information."
+    },
+
+    realestate: {
+      number: "04",
+      title: "Real Estate Flyer",
+      image: "real-estate-flyer.jpg",
+      alt: "Real Estate Flyer",
+      description:
+        "A real estate promotional flyer designed to present property information clearly while creating a strong visual impression for potential buyers."
+    },
+
+    car: {
+      number: "05",
+      title: "Car Sale Flyer",
+      image: "car-sale-flyer.jpg",
+      alt: "Car Sale Flyer",
+      description:
+        "A car sales promotional flyer designed to showcase vehicle information and create a clear, engaging presentation for potential buyers."
+    },
+
+    event: {
+      number: "06",
+      title: "Event Planning Flyer",
+      image: "event-planning-flyer.jpg",
+      alt: "Event Planning Flyer",
+      description:
+        "An event planning and décor flyer created to showcase event services, highlight the visual experience, and communicate the brand’s approach to creating memorable occasions."
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const projectKey = params.get("project");
+
+  const project = projects[projectKey] || projects.crypto;
+
+  document.getElementById("project-number").textContent = project.number;
+  document.getElementById("project-title").textContent = project.title;
+
+  const projectImage = document.getElementById("project-image");
+
+  projectImage.src = project.image;
+  projectImage.alt = project.alt;
+
+  document.getElementById("project-description").textContent =
+    project.description;
+</script>
+
+</body>
+</html>
